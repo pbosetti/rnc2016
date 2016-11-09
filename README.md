@@ -17,7 +17,7 @@ It is suggested to install Debian under a virtual machine using [VirtualBox](htt
 Other virtualization systems (VMWare, or Parallels) can perform better, but are not free.
 
 **Important Note N. 1**: There are a number of different disk images for the same release (8.6), some of them *do not* install everithing is needed for our sake. Consequently,
-before proceeding any further, make sure that the install image you are using is corresponds to the **Debian 8.6 live with Cinnamon Desktop**.
+before proceeding any further, make sure that the install image you are using corresponds to the **Debian 8.6 live with Cinnamon Desktop**.
 
 **Important Note N. 2**: Unless you have an old PC that has a 32-bit CPU (i.e. pre-Core2 Duo), it is strongly advisable to create a 64-bit virtual machine. 
 On Windows platforms, this requires to enable 64-bit virtualization extensions at the BIOS level (these are usually disabled by default). 
