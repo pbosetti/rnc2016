@@ -96,9 +96,8 @@ On VirtualBox, it is suggested to also install the Linux Guest Additions, a set 
   
           $ cd ~
           $ mkdir tmp
-          $ cp /media/cdrom/* tmp/
-          $ chmod a+x VBoxLinuxAdditions.run
-          $ ./VBoxLinuxAdditions.run
+          $ sudo cp -r /media/cdrom/* tmp/
+          $ sudo ./VBoxLinuxAdditions.run
   
   4. wait for the commands to complete, then close the terminal window and 
      reboot the virtual machine
