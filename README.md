@@ -75,7 +75,7 @@ Most of the operations will be done in a terminal, or console, application. Open
 
 Execute the following command for installing the needed software. Here and in the following, the first character `$` stands for the command prompt, and you *do not* have to type it:
 
-    $ wget -qO - http://bit.ly/debian_devel2016 | bash
+    $ wget -qO - http://bit.ly/debian_devel2016 | sudo bash
     
 This will ask for your password and take a while (~5 mins) to execute, also depending on your connection speed.
 
