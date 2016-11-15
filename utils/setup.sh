@@ -7,7 +7,7 @@ if ! sudo apt-get update; then
   exit $?
 fi
  
-pkgs=(ruby ruby-dev git clang make gnuplot curl libreadline6-dev libssl-dev zlib1g-dev libglew-dev libglu1-mesa-dev freeglut3-dev ntp build-essential)
+pkgs=(ruby2.1 ruby2.1-dev git clang make gnuplot curl libreadline6-dev libssl-dev zlib1g-dev libglew-dev libglu1-mesa-dev freeglut3-dev ntp build-essential)
 
 echo 
 echo "************************************"
