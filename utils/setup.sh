@@ -1,13 +1,26 @@
 #!/bin/bash 
 echo 
 echo "************************************"
+echo "Fixing sources.list"
+
+(
+cat <<EOS
+deb http://security.debian.org/ jessie/updates main
+deb-src http://security.debian.org/ jessie/updates main
+deb http://http.debian.net/debian/ jessie main
+deb-src http://http.debian.net/debian/ jessie main
+EOS
+) > /etc/apt/sources.list.d/rnc.list
+
+echo 
+echo "************************************"
 echo "Updating package list"
-if ! sudo apt-get update; then
+if ! apt-get update; then
   echo "Could not update package list"
   exit $?
 fi
  
-pkgs=(libruby2.1 rubygems-integration ruby2.1 ruby2.1-dev git clang make gnuplot curl libreadline6-dev libssl-dev zlib1g-dev libglew-dev libglu1-mesa-dev freeglut3-dev ntp build-essential)
+pkgs=(ruby ruby-dev git clang make gnuplot curl libreadline6-dev libssl-dev zlib1g-dev libglew-dev libglu1-mesa-dev freeglut3-dev ntp build-essential)
 
 echo 
 echo "************************************"
@@ -17,7 +30,7 @@ do
   echo
   echo "Installing ${p}"
   echo "---------------"
-  if ! sudo apt-get install -y --force-yes ${p}; then
+  if ! apt-get install -y --force-yes ${p}; then
     echo "Error while installing ${p}"
     exit $?
   fi
@@ -26,7 +39,7 @@ done
 echo 
 echo "************************************"
 echo "Installing ruby gems"
-sudo gem install pry colorize ffi gnuplotr rake --no-rdoc --no-ri
+gem install pry colorize ffi gnuplotr rake --no-rdoc --no-ri
  
 echo 
 echo "************************************"
