@@ -6,7 +6,7 @@ The reference development system is Linux Debian 8.6.0 64 bit (amd64), even thou
 You can download the reference images from here:
 
 * [Debian 8.6.0, 64 bit](http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.6.0-amd64-cinnamon-desktop.iso)
-* [Debian 8.2.0, 32 bit](http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/debian-live-8.6.0-i386-cinnamon-desktop.iso)
+* [Debian 8.6.0, 32 bit](http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/debian-live-8.6.0-i386-cinnamon-desktop.iso)
 
 There is a [short movie](http://vimeo.com/77040275) that shows the kind of results RNC will produce at the end of its development.
 
