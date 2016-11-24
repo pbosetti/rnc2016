@@ -73,6 +73,47 @@ def myfun2(str, n=1)
   str * n
 end
 
+# Loops
+# 3 types of basic loops: for, while, until
+
+# FOR LOOPS
+ary = [2, 7, 1, 9, 2.7, "something"]
+for element in ary do
+  puts element
+end
+
+for i in 0..ary.length do
+  puts "ary[#{i}] = #{ary[i]}"
+end
+
+# WHILE LOOPS
+i = 5
+while i >= 0 do  # Comparison operators: ==, >=, >, <, <=, !=
+  puts "ary[#{i}] = #{ary[i]}"
+  i = i - 1 # i-= 1, i += 2, i *= 10, i /= 2
+end
+
+# UNTIL LOOPS
+i = 0
+until i > 5 do   # while !(i > 5) do 
+  puts "ary[#{i}] = #{ary[i]}"
+  i += 1
+end
+
+
+# Postfix form
+a = 10
+puts a -= 2 while a > 0
+
+
+
+
+
+
+
+
+
+
 
 
 
