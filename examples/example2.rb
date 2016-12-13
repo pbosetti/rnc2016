@@ -10,7 +10,7 @@ class Chalk # Class name MUST staty with a caital letter
   def initialize(c, l=10.0)
     self.length = l
     @color = c
-  end
+  end # def initialize
   
   # "getter" accessor
   # def length
@@ -32,7 +32,7 @@ class Chalk # Class name MUST staty with a caital letter
     end
   end
   
-end
+end # class Chalk
 
 
 c1 = Chalk.new("white")
