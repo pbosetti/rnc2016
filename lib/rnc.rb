@@ -79,7 +79,7 @@ module RNC    # Name of modules follow the class convention
     attr_reader :length, :type, :delta
     attr_accessor :profile, :dt
     
-    def initialize(l="G00 X0 Y0 Z0 F1000")
+    def initialize(l="G00 X0 Y0 Z0 F1000 S1000")
       @start = Point[]
       @target = Point[]
       @feed_rate = nil
@@ -139,14 +139,66 @@ module RNC    # Name of modules follow the class convention
   end # class Block
   
   
+  
+  class Parser
+  # Class for loading a G-Code File and iteratively
+  # create a new Block instance for each line
+    attr_reader :blocks
+  
+    def initialize(cfg)
+      raise "Need a Hash configuration" unless cfg.kind_of? Hash
+      raise "Missing filename" unless cfg[:file]
+      @cfg = cfg
+      @blocks = [Block.new()]
+      @profiler = Profiler.new(@cfg)
+      @interp   = Interpolator.new(@cfg)
+    end
+  
+  
+    def parse_file
+      File.foreach(@cfg[:file]) do |line|
+        next if line.length <= 1
+        next if line[0] == '#'
+        b = Block.new(line)
+        b.modal!(@blocks.last)
+        @blocks << b
+      end
+    end
+  
+    def inspect
+      result = ""
+      @blocks.each_with_index do |b, i|
+        result << "#{i}: #{b.inspect}\n"
+      end
+      return result
+    end
+  
+  end # class Parser
+  
+  
+  class Profiler
+  
+  end
+  
+  
+  class Interpolator
+  
+  end
+  
+  
 
 end # module RNC
 
 
-g0 = RNC::Block.new
-g1 = RNC::Block.new("G01 X200 Y300 F500")
+CONFIG = {
+  file: "example.g",
+  dt: 0.005,
+  A:  1000,
+  B:  1000
+}
 
-p g0
-p g1
+parser = RNC::Parser.new(CONFIG)
+parser.parse_file
+p parser
 
 

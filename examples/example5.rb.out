@@ -1,0 +1,47 @@
+1: #!/usr/bin/env ruby
+2: 
+3: # Dealing with files
+4: 
+5: # More complex example
+6: puts "Creating a File instance:"
+7: file = File.open("test.txt", "r")
+8: # use the file instance
+9: lines = file.readlines
+10: p lines
+11: # remember to close the file
+12: file.close
+13: 
+14: # Using a block
+15: puts "Using a block:"
+16: File.open("test.txt", "r") do |f|
+17:   p f
+18:   my_lines = f.readlines
+19:   p my_lines
+20: end
+21: 
+22: 
+23: # Even better solution
+24: puts "one single operation:"
+25: lns = File.readlines("test.txt")
+26: p lns
+27: 
+28: # Iterator
+29: # Command line arguments go to the ARGV Array
+30: p ARGV
+31: raise "Need a file name" unless ARGV.size == 1
+32: 
+33: puts "Using the foreach iterator:"
+34: i = 0
+35: File.open("#{ARGV[0]}.out", "w") do |of|
+36:   File.foreach(ARGV[0]) do |line|
+37:     of.puts "#{i+=1}: #{line}"
+38:   end
+39: end
+40: 
+41: 
+42: 
+43: 
+44: 
+45: 
+46: 
+47: 
