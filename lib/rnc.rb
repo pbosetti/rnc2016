@@ -307,25 +307,7 @@ module RNC    # Name of modules follow the class convention
 end # module RNC
 
 
-CONFIG = {
-  file: "example.g",
-  tq: 0.005,
-  A:  100,
-  D:  100
-}
 
-parser = RNC::Parser.new(CONFIG)
-parser.parse_file
-parser.each_block do |interp, i|
-  p interp.block
-  if interp.block.type == :G00 then
-    puts "--- Rapid positioning ---"
-    next
-  end
-  interp.each_timestep do |t, cmd|
-    puts "#{t} #{cmd[:position]} #{cmd[:lambda]} #{cmd[:type]}"
-  end
-end
 
 
 
