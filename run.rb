@@ -15,7 +15,7 @@ unless ARGV.size == 1 then
 end
 
 # Set this to true for having output on console at each iteration
-VERBOSE = true
+VERBOSE = false
 
 # Configuration data, collected into a single hash
 CONFIG = {
@@ -166,4 +166,6 @@ puts "=" * 79
 loop while (viewer.run)
 
 viewer.close
+
+puts "Now run the command 'gnuplot -p plot.gp' for a chart..."
 
