@@ -28,7 +28,7 @@ puts "%3s %9s %9s %9s %9s %9s %9s %9s" % header
   d = diam - 2 * doc # current cutting diameter
   
   # Prepare data array, one per line
-  ary = [i, x, d]
+  ary = [i, z, d]
   ary += lathe.status(d, doc)
   
   # Four significant digits: we must use scientific notation
