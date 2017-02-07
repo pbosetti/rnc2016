@@ -24,11 +24,11 @@ class Lathe
   end
   
   def torque(diam, doc) # T = P/omega
-    return self.power(doc) / (self.rotary_speed(diam) / 120.0 * Math::PI)
+    return self.power(doc) / (self.rotary_speed(diam) / 30.0 * Math::PI)
   end
   
   def power(doc)
-    return self.mrr(doc) * @unit_energy
+    return (self.mrr(doc) / 60.0) * @unit_energy
   end
   
   def status(diam, doc)
