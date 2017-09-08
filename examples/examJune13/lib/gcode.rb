@@ -93,7 +93,7 @@ class Gcode
         m.feed_rate = feed_rate unless m.feed_rate #unless already defined (rapid)
         m.start = @previous
         m.target = target.dup
-        moves << m
+        @moves << m
         @previous = target.dup
         @count += 1
       end
