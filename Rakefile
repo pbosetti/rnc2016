@@ -7,8 +7,8 @@ when /darwin/
   GCC = "gcc"
 when /linux/
   OS = :linux
-  CC = "gcc"
-  GCC = "g++"
+  CC = "clang"
+  GCC = "clang"
 else
   raise "Platform not supported!"
 end
@@ -54,7 +54,7 @@ file exec_name => obj do
   when :mac
     sh "#{GCC} -lstdc++ -framework AppKit -framework GLUT -framework OpenGL -o #{exec_name} #{obj}"
   when :linux
-    sh "#{GCC} -lstdc++ -lGL -lGLU -lglut -lGLEW -lX11 -o #{exec_name} #{obj}"
+    sh "#{GCC} -lstdc++ -lX11 -lGLEW -lGL -lGLU -lglut -lpthread -lm -o #{exec_name} #{obj}"
   end
 end
 
